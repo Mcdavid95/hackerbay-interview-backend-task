@@ -9,6 +9,6 @@ const router = express.Router();
 
 router.post('/user/login', validateInput.logInInput, controller.login);
 router.post('/user/book', jwtVerify.hasToken, validateInput.addBookInput, validateInput.bookNameExists, controller.addBook);
-router.post('/user/image', jwtVerify.hasToken, controller.createThumbnail);
+router.post('/user/image', jwtVerify.hasToken, validateInput.thumbNailInput, controller.createThumbnail);
 
 export default router;

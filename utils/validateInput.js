@@ -37,6 +37,15 @@ const validateInput = {
     return next();
   },
 
+  thumbNailInput(req, res, next) {
+    if (typeof req.body.urlImage === 'undefined' || typeof req.body.fileName === 'undefined') {
+      return res.status(401).json({
+        message: 'urlImage and fileName fields must not be empty'
+      });
+    }
+    next();
+  },
+
   bookNameExists(req, res, next) {
     if (Books.some(book => req.title === book.title)) {
       return res.status(401).json({

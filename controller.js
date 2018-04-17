@@ -6,7 +6,7 @@ import cloudinary from 'cloudinary';
 import request from 'request';
 import dotenv from 'dotenv';
 
-import Books from './model/books';
+const Books = [];
 
 // fs.readFile('./model/books.json', (error, data) => {
 //   if (error) throw error;
