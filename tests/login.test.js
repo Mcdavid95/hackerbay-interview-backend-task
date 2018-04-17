@@ -154,7 +154,7 @@ describe('Thumbnail endpoint', () => {
       });
   });
 
-  xit('should successfully create thumbnail', (done) => {
+  it('should successfully create thumbnail', (done) => {
     api
       .post('/api/v1/user/image')
       .set('Connetion', 'keep alive')
