@@ -102,7 +102,7 @@ describe('Apply jsonPatch', () => {
       .send(noDescription)
       .end((err, res) => {
         expect(res.status).to.deep.equal(401);
-        expect(res.body.message).to.deep.equal('Title field must not be empty');
+        expect(res.body.message).to.deep.equal('Descriptione field must not be empty');
         done();
       });
   });
@@ -117,7 +117,7 @@ describe('Apply jsonPatch', () => {
       .send(noAuthor)
       .end((err, res) => {
         expect(res.status).to.deep.equal(401);
-        expect(res.body.message).to.deep.equal('Title field must not be empty');
+        expect(res.body.message).to.deep.equal('Author field must not be empty');
         done();
       });
   });
@@ -141,7 +141,7 @@ describe('Apply jsonPatch', () => {
 describe('Thumbnail endpoint', () => {
   it('should not create thumbnail if urlImage, or fileName fields are undefined', (done) => {
     api
-      .post('/api/v1/user/book')
+      .post('/api/v1/user/image')
       .set('Connetion', 'keep alive')
       .set('Content-Type', 'application/json')
       .set('x-access-token', token)
@@ -150,6 +150,21 @@ describe('Thumbnail endpoint', () => {
       .end((err, res) => {
         expect(res.status).to.deep.equal(401);
         expect(res.body.message).to.deep.equal('urlImage and fileName fields must not be empty');
+        done();
+      });
+  });
+
+  it('should successfully create thumbnail', (done) => {
+    api
+      .post('/api/v1/user/image')
+      .set('Connetion', 'keep alive')
+      .set('Content-Type', 'application/json')
+      .set('x-access-token', token)
+      .type('form')
+      .send(thumbnailData)
+      .end((err, res) => {
+        expect(res.status).to.deep.equal(201);
+        expect(res.body.message).to.deep.equal('Thumbnail created successfully');
         done();
       });
   });
