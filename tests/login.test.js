@@ -102,7 +102,7 @@ describe('Apply jsonPatch', () => {
       .send(noDescription)
       .end((err, res) => {
         expect(res.status).to.deep.equal(401);
-        expect(res.body.message).to.deep.equal('Descriptione field must not be empty');
+        expect(res.body.message).to.deep.equal('Description field must not be empty');
         done();
       });
   });
@@ -154,7 +154,7 @@ describe('Thumbnail endpoint', () => {
       });
   });
 
-  it('should successfully create thumbnail', (done) => {
+  xit('should successfully create thumbnail', (done) => {
     api
       .post('/api/v1/user/image')
       .set('Connetion', 'keep alive')
