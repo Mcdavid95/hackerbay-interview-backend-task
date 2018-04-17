@@ -72,7 +72,8 @@ export default {
           cloudinary.uploader.upload(`${dir}/${fileName}.png`, (result) => {
             res.status(201).json({
               success: true,
-              thumbnailUrl: result.url
+              thumbnailUrl: result.url,
+              message: 'Thumbnail created successfully'
             });
           });
         } else {
