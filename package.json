@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "start": "babel-node server.js",
-    "coverage-report": "cat ./coverage/lcov.info",
+    "coverage-report": "cat ./coverage/lcov.info | coveralls",
     "test": "nyc --reporter=text --reporter=html --reporter=lcov ./node_modules/.bin/mocha --compilers js:babel-core/register ./tests/** --timeout 30000 --exit && npm run coverage-report"
   },
   "repository": {
