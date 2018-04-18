@@ -1,5 +1,5 @@
 # hackerbay-interview-backend-task
-[![Build Status](https://travis-ci.org/Mcdavid95/hackerbay-interview-backend-task.svg?branch=development)](https://travis-ci.org/Mcdavid95/hackerbay-interview-backend-task)
+[![Build Status](https://travis-ci.org/Mcdavid95/hackerbay-interview-backend-task.svg?branch=development)](https://travis-ci.org/Mcdavid95/hackerbay-interview-backend-task) [![Coverage Status](https://coveralls.io/repos/github/Mcdavid95/hackerbay-interview-backend-task/badge.svg?branch=development)](https://coveralls.io/github/Mcdavid95/hackerbay-interview-backend-task?branch=development)
 
 ### Endpoints
 
