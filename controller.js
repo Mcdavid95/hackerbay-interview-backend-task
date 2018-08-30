@@ -65,8 +65,7 @@ export default {
     const dir = `${__dirname}/thumbnail`;
     const url = req.body.urlImage;
     const { fileName } = req.body;
-    gm(request(url))
-      // .thumb(50, 50, `${dir}/thumbnail/${fileName}.png`, 100, (error) => {
+    gm(request(url)).resize(50, 50, '!')
       .write(`${dir}/${fileName}.png`, (error) => {
         if (!error) {
           cloudinary.uploader.upload(`${dir}/${fileName}.png`, (result) => {

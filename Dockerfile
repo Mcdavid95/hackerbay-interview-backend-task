@@ -4,6 +4,8 @@ FROM node:8-alpine
 # Create a directory where our app will be placed
 RUN mkdir -p /usr/app
 
+RUN npm install babel-cli -g
+
 # Change directory so that our commands run inside this new directory
 WORKDIR /usr/app
 
@@ -11,13 +13,7 @@ WORKDIR /usr/app
 COPY package.json /usr/app
 
 # Install dependecies
-RUN apk add --no-cache --virtual .gyp \
-        python \
-        make \
-        g++ \
-    && npm install \
-        [ your npm dependencies here ] \
-    && apk del .gyp
+RUN npm install
 
 # Get all the code needed to run the app
 COPY . /usr/app

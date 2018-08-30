@@ -39,7 +39,6 @@
     "mocha": "^5.1.0",
     "request": "^2.85.0",
     "rfc6902": "^2.2.2",
-    "sharp": "^0.20.1",
     "supertest": "^3.0.0"
   },
   "devDependencies": {
