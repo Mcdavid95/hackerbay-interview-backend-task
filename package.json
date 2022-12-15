@@ -38,7 +38,7 @@
     "jsonwebtoken": "^8.2.1",
     "mocha": "^5.1.0",
     "request": "^2.85.0",
-    "rfc6902": "^2.2.2",
+    "rfc6902": "^5.0.0",
     "supertest": "^3.0.0"
   },
   "devDependencies": {
